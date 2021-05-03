@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>My-Ice-Cream-Flavour</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>controller.UserLoginController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Register</servlet-name>
+		<servlet-class>controller.UserRegisterController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>GetPassword</servlet-name>
+		<servlet-class>controller.UserPasswordController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>SEE</servlet-name>
+		<servlet-class>controller.SeeRecipy</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ADD</servlet-name>
+		<servlet-class>controller.AddRecipy</servlet-class>
+	</servlet>
+	
+
+
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Register</servlet-name>
+		<url-pattern>/Register</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetPassword</servlet-name>
+		<url-pattern>/GetPassword</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SEE</servlet-name>
+		<url-pattern>/SEE</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ADD</servlet-name>
+		<url-pattern>/ADD</url-pattern>
+	</servlet-mapping>
+</web-app>
