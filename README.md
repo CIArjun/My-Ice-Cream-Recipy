@@ -1,2 +1,2 @@
 # My-Ice-Cream-Recipy
-Adding Webhook
+Adding Webhook trigger
