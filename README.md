@@ -1,2 +1,2 @@
 # My-Ice-Cream-Recipy
-Adding Webhook trigger
+Adding Webhook trigger for jenkins job
