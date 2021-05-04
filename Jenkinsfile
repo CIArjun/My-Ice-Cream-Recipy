@@ -28,7 +28,7 @@ pipeline {
                 sh "${MAVEN_HOME}/bin/mvn sonar:sonar"
               }
             }
-                
+        }     
        
     }
 }
