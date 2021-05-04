@@ -30,10 +30,16 @@
     </dependency>
 </dependencies>
 <properties>
-	    <maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+	<sonar.language>java</sonar.language>
+	<sonar.tests>src/test/java</sonar.tests>
+    	<sonar.projectKey>Ice-Cream</sonar.projectKey>
+	<sonar.host.url>http://localhost:9000/sonar</sonar.host.url>
+	<sonar.login>098b2bdd32e8e0cbc4ed7186e70d5526f3ae5432</sonar.login>
 </properties>
   <build>
+	  <finalName>My Ice-Cream Flavour!</finalName>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
@@ -49,6 +55,11 @@
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
+      </plugin>
+      <plugin>
+	<groupId>org.sonarsource.scanner.maven</groupId>
+	<artifactId>sonar-maven-plugin</artifactId>
+	<version>3.2</version>
       </plugin>
     </plugins>
   </build>
