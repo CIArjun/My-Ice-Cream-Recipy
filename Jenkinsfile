@@ -22,7 +22,7 @@ pipeline {
             }
         }
         stage('Sonar Analysis'){
-            step{
+            steps{
                 def MAVEN_HOME = tool name: 'maven-3', type: 'maven'
             withSonarQubeEnv('sonar') {
                 sh "${MAVEN_HOME}/bin/mvn sonar:sonar"
