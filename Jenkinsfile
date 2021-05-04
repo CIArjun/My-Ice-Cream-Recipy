@@ -21,5 +21,10 @@ pipeline {
                 }
             }
         }
+        stage('Sonar Analysis') {
+            steps {
+                sh 'mvn sonar:sonar'
+            }
+        }
     }
 }
