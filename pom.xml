@@ -28,8 +28,17 @@
 <properties>
 	<maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-	<!--<sonar.language>java</sonar.language>-->
-	<sonar.tests>src/test/java/service</sonar.tests>
+	<sonar.language>java</sonar.language>
+	<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+	<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+	<sonar.coverage.jacoco.xmlReportPaths>
+/home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/target/jacoco.xml
+	</sonar.coverage.jacoco.xmlReportPaths>
+	<sonar.jacoco.reportsPaths>
+/home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/target/jacoco-ut.exec/jacoco-ut.exec
+	</sonar.jacoco.reportsPaths>
+	<sonar.sources>src/main/java</sonar.sources>
+	<sonar.tests>src/test/java</sonar.tests>
     	<sonar.projectKey>Ice-Cream</sonar.projectKey>
 	<sonar.host.url>http://05ef463b1d58.ngrok.io/sonar</sonar.host.url>
 	<sonar.login>61e4bed9a3833683c096c02ef3bbd43e68608bc2</sonar.login>
@@ -52,11 +61,83 @@
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
+
       <plugin>
 	<groupId>org.sonarsource.scanner.maven</groupId>
 	<artifactId>sonar-maven-plugin</artifactId>
 	<version>3.2</version>
-      </plugin>
-    </plugins>
+      </plugin>	
+</plugins>
   </build>
+<profiles>
+<profile>
+<id>sonar</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<build>
+<pluginManagement>
+<plugins>
+<plugin>
+<groupId>org.jacoco</groupId>
+<artifactId>jacoco-maven-plugin</artifactId>
+<version>0.8.3</version>
+</plugin>
+</plugins>
+</pluginManagement>
+<plugins>
+<plugin>
+<groupId>org.jacoco</groupId>
+<artifactId>jacoco-maven-plugin</artifactId>
+<configuration>
+<destFile>
+/home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/target/jacoco-ut.exec
+</destFile>
+</configuration>
+<executions>
+<execution>
+<goals>
+<goal>prepare-agent</goal>
+</goals>
+</execution>
+<execution>
+<id>report</id>
+<goals>
+<goal>report</goal>
+</goals>
+<configuration>
+<dataFile>
+/home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/target/jacoco-ut.exec
+</dataFile>
+<outputEncoding>UTF-8</outputEncoding>
+<outputDirectory>/home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/target/</outputDirectory>
+</configuration>
+</execution>
+<execution>
+<id>jacoco-check</id>
+<goals>
+<goal>check</goal>
+</goals>
+<configuration>
+<dataFile>
+/home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/target/jacoco-ut.exec
+</dataFile>
+<rules>
+<rule>
+<limits>
+<limit>
+<minimum>0.6</minimum>
+</limit>
+</limits>
+</rule>
+</rules>
+</configuration>
+</execution>
+</executions>
+</plugin>
+</plugins>
+</build>
+</profile>
+</profiles>
+
 </project>

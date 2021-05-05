@@ -29,14 +29,14 @@ public class UserServiceTest {
 	}
         
         @Test
-	public void testgetIndianVaccines() {
+	public void testSeeRecipies() {
 		UserService service = new UserService();
 		Map<String,String> m = new HashMap<String,String>();
 		m = service.seeRecipies();
 		assertEquals(m,new UserService().seeRecipies());
 	}
 	@Test
-	public void testgetAmericaVaccines() {
+	public void testAddRecipies() {
 		UserService service = new UserService();
 	
 		String list= service.addRecipies("Dairy","Milk");
