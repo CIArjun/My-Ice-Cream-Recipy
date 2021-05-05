@@ -32,7 +32,7 @@
 	<sonar.tests>src/test/java/service</sonar.tests>
     	<sonar.projectKey>Ice-Cream</sonar.projectKey>
 	<sonar.host.url>http://localhost:9000/sonar</sonar.host.url>
-	<sonar.login>098b2bdd32e8e0cbc4ed7186e70d5526f3ae5432</sonar.login>
+	<sonar.login>61e4bed9a3833683c096c02ef3bbd43e68608bc2</sonar.login>
 </properties>
   <build>
 	  <finalName>My Ice-Cream Flavour!</finalName>
