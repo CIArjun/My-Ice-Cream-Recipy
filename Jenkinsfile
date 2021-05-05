@@ -26,7 +26,7 @@ pipeline {
           stage("SonarQube Analysis") {
                    steps {
               withSonarQubeEnv('sonar') {
-                 sh 'mvn sonar:sonar -Dsonar.host.url=http://05ef463b1d58.ngrok.io/sonar -Dsonar.login=61e4bed9a3833683c096c02ef3bbd43e68608bc2'
+                 sh 'mvn sonar:sonar -Dsonar.java.binaries=target/classes -Dsonar.host.url=http://05ef463b1d58.ngrok.io/sonar -Dsonar.login=61e4bed9a3833683c096c02ef3bbd43e68608bc2'
               }
           }
       }  
