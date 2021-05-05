@@ -18,16 +18,16 @@ pipeline {
             post {
                 always {
                     junit 'target/surefire-reports/*.xml' 
-                }
-            }
-        }
-        stage('Sonar Analysis'){
+                }stage('Sonar Analysis'){
             steps{
                withSonarQubeEnv('sonar') {
                 sh "mvn sonar:sonar"
               }
             }
-        }     
+        }    
+            }
+        }
+           
        
     }
 }
