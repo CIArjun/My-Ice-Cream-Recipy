@@ -37,7 +37,7 @@ pipeline {
    		 // some block
 			sh 'mvn -s $MVN_SETTINGS clean package'
 			}
- 
-       
+	   }  
+	  }
     }
 }
