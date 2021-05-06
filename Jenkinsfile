@@ -29,7 +29,15 @@ pipeline {
                  sh 'mvn sonar:sonar'
               }
           }
-      }  
+      } 
+	  stage('Upload war to Nexus'){
+	   steps{
+		
+		configFileProvider([configFile(fileId: 'm2-global', variable: 			'MVN_SETTINGS')]) {
+   		 // some block
+			sh 'mvn -s $MVN_SETTINGS clean package'
+			}
+ 
        
     }
 }

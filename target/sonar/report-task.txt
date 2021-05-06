@@ -1,6 +1,0 @@
-projectKey=Ice-Cream
-serverUrl=http://c2eba4964b79.ngrok.io/sonar
-serverVersion=7.5.0.20543
-dashboardUrl=http://c2eba4964b79.ngrok.io/sonar/dashboard?id=Ice-Cream
-ceTaskId=AXk9Lqlw8YSv6FDP1sWb
-ceTaskUrl=http://c2eba4964b79.ngrok.io/sonar/api/ce/task?id=AXk9Lqlw8YSv6FDP1sWb
