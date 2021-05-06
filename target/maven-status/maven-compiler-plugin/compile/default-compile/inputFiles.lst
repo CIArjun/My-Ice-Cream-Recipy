@@ -1,7 +1,6 @@
 /home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/src/main/java/controller/UserLoginController.java
 /home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/src/main/java/service/UserService.java
 /home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/src/main/java/controller/UserRegisterController.java
-/home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/src/test/java/service/UserServiceTest.java
 /home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/src/main/java/controller/UserPasswordController.java
 /home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/src/main/java/controller/SeeRecipy.java
 /home/cicd/eclipse-workspace/My-Ice-Cream-Flavour/src/main/java/db/UserDb.java

@@ -1,6 +1,5 @@
 controller/SeeRecipy.class
 controller/UserLoginController.class
-service/UserServiceTest.class
 controller/AddRecipy.class
 model/User.class
 service/UserService.class
