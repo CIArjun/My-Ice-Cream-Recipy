@@ -4,14 +4,7 @@
   <artifactId>My-IceCream-Flavour</artifactId>
   <version>0.0.2-SNAPSHOT</version>
   <packaging>war</packaging>
-	<distributionManagement>
-    <repository>
-        <uniqueVersion>false</uniqueVersion>
-        <id>nexus</id>
-        <url>http://6dbd66a952da.ngrok.io/repository/Flavour-group/</url>
-        <layout>default</layout>
-    </repository>
-</distributionManagement>
+	
   <dependencies>
     <dependency>
         <groupId>javax.servlet</groupId>
