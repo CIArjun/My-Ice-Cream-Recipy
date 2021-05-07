@@ -53,6 +53,18 @@
 	<sonar.login>61e4bed9a3833683c096c02ef3bbd43e68608bc2</sonar.login>
 </properties>
 
+<distributionManagement>
+    <repository>
+        <uniqueVersion>false</uniqueVersion>
+        <id>nexus</id>
+        <name>Flavour-group</name>
+        <url>http://http://bc646b683caa.ngrok.io/repository/Flavour-group/</url>
+        <layout>default</layout>
+    </repository>
+</distributionManagement>
+
+	
+	
   <build>
 <finalName>My Ice-Cream Flavour!</finalName>
 
