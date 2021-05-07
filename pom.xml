@@ -8,9 +8,7 @@
     <repository>
         <uniqueVersion>false</uniqueVersion>
         <id>nexus</id>
-	    <name>Flavour-group></name>
-        <url>http://6dbd66a952da.ngrok.io/repository/Flavour-group/</url>
-        <layout>default</layout>
+	<url>http://6dbd66a952da.ngrok.io/repository/Flavour-group</url>
     </repository>
 </distributionManagement>
   <dependencies>
