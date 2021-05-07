@@ -35,7 +35,7 @@ pipeline {
 		
 		configFileProvider([configFile(fileId: 'm2-global', variable:'MVN_SETTINGS')]) {
    		 // some block
-			sh 'mvn -s $MVN_SETTINGS deploy'
+			sh 'mvn -s $MVN_SETTINGS deploy -Dmaven.test.skip=true'
 			}
 	   }  
 	  }
