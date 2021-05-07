@@ -8,7 +8,7 @@
     <repository>
         <uniqueVersion>false</uniqueVersion>
         <id>Flavour-group</id>
-        <url>http://bc646b683caa.ngrok.io/repository/Flavour-group/</url>
+        <url>http://6dbd66a952da.ngrok.io/repository/Flavour-group/</url>
         <layout>default</layout>
     </repository>
 </distributionManagement>
