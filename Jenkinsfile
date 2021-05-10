@@ -23,11 +23,19 @@ pipeline {
                   }
              }
            } 
-  	  }
+	
+	stage("Trigger Nexus Job"){
+	    steps{
+		build wait: false, job: '/Ice-Cream-Nexus'    	
+	    }
+			
+	    
+	    
+  	}
 	    
 	post {
           always {
-             archiveArtifacts artifacts: 'target/jacoco.xml'
+             archiveArtifacts artifacts: 'target/*.xml'
              junit  'target/surefire-reports/*.xml'
              }
 	}
