@@ -29,7 +29,7 @@ pipeline {
 		build wait: false, job: '/Ice-Cream-Nexus'    	
 	    }
 			
-	    
+	 }  
 	    
   	}
 	    
