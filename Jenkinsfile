@@ -23,16 +23,7 @@ pipeline {
                   }
              }
            } 
-	stage('Upload war to Nexus'){
-	    steps{
-	
-		configFileProvider([configFile(fileId: 'm2-global', variable:'MVN_SETTINGS')]) {
-   		   sh 'mvn -s $MVN_SETTINGS deploy -Dmaven.test.skip=true'
-		 }
-	     }  
-	   }
-        }
-        post {
+	post {
           always {
              archiveArtifacts artifacts: 'target/jacoco.xml'
              junit  'target/surefire-reports/*.xml'
