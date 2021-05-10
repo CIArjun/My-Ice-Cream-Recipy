@@ -26,6 +26,9 @@ pipeline{
 	stage('upload docker image to nexus'){
 	
 	   steps{
+	   
+	   	
+		configFileProvider([configFile(fileId: 'm2-global', variable:'MVN_SETTINGS')]) {
 	   	
 		sh 'docker build -t ice-cream/flavour:latest .'
 		
@@ -34,6 +37,8 @@ pipeline{
 		sh 'docker login -u admin -p admin 6d43aa80588b.ngrok.io:8212'
 		
 		sh 'docker push 6d43aa80588b.ngrok.io:8212/ice-cream/flavour:latest'
+		
+		}
 	   }
 	   
 	   }
@@ -41,6 +46,9 @@ pipeline{
 	stage('Run our own Ice-Cream-Flaour'){
 	
 	   steps{
+	   
+	   	
+		configFileProvider([configFile(fileId: 'm2-global', variable:'MVN_SETTINGS')]) {
 	   	
 		sh 'docker push 6d43aa80588b.ngrok.io:8212/ice-cream/flavour:latest'
 
@@ -55,6 +63,8 @@ pipeline{
 
 
 		sh 'docker ps'
+		
+		}
 	   
 	   }
 	   
