@@ -23,11 +23,13 @@ pipeline {
                   }
              }
            } 
+  	  }
+	    
 	post {
           always {
              archiveArtifacts artifacts: 'target/jacoco.xml'
              junit  'target/surefire-reports/*.xml'
              }
 	}
-     }
+     
 }
