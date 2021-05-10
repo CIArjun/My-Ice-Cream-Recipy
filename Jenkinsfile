@@ -15,29 +15,27 @@ pipeline {
             steps {
                 sh 'mvn test' 
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml' 
-                }
-                
-               
-            }
         }
-          stage("SonarQube Analysis") {
-                   steps {
-              withSonarQubeEnv('sonar') {
-                 sh 'mvn sonar:sonar'
-              }
-          }
-      } 
-	  stage('Upload war to Nexus'){
-	   steps{
-		
+        stage("SonarQube Analysis") {
+            steps {
+                withSonarQubeEnv('sonar') {
+                sh 'mvn sonar:sonar'
+                  }
+             }
+           } 
+	stage('Upload war to Nexus'){
+	    steps{
+	
 		configFileProvider([configFile(fileId: 'm2-global', variable:'MVN_SETTINGS')]) {
-   		 // some block
-			sh 'mvn -s $MVN_SETTINGS deploy -Dmaven.test.skip=true'
-			}
-	   }  
-	  }
-    }
+   		   sh 'mvn -s $MVN_SETTINGS deploy -Dmaven.test.skip=true'
+		 }
+	     }  
+	   }
+        }
+        post {
+          always {
+             archiveArtifacts artifacts: 'target/jacoco.xml'
+             junit  'target/surefire-reports/*.xml'
+             }
+     }
 }
