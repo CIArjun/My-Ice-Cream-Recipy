@@ -35,7 +35,7 @@ pipeline {
 	    
 	post {
           always {
-             archiveArtifacts artifacts: 'target/*.xml'
+             archiveArtifacts artifacts: 'target/My Ice-Cream Flavour!.war'
              junit  'target/surefire-reports/*.xml'
              }
 	}
