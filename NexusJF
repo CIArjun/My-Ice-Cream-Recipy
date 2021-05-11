@@ -26,31 +26,25 @@ pipeline{
 	stage('upload docker image to nexus'){
 	
 	   steps{
-	   
-	   	
-		configFileProvider([configFile(fileId: 'm2-global', variable:'MVN_SETTINGS')]) {
 	   	
 		sh 'docker build -t ice-cream/flavour:latest .'
 		
-		sh 'docker tag ice-cream/flavour:latest 6d43aa80588b.ngrok.io:8212/ice-cream/flavour:latest'
+		sh 'docker tag ice-cream/flavour:latest 5b90a407b822.ngrok.io/ice-cream/flavour:latest'
 		
-		sh 'docker login -u admin -p admin 6d43aa80588b.ngrok.io:8212'
+		sh 'docker login -u admin -p admin 5b90a407b822.ngrok.io'
 		
-		sh 'docker push 6d43aa80588b.ngrok.io:8212/ice-cream/flavour:latest'
+		sh 'docker push 5b90a407b822.ngrok.io/ice-cream/flavour:latest'
 		
 		}
 	   }
 	   
-	   }
+	   
 	   
 	stage('Run our own Ice-Cream-Flaour'){
 	
 	   steps{
-	   
-	   	
-		configFileProvider([configFile(fileId: 'm2-global', variable:'MVN_SETTINGS')]) {
-	   	
-		sh 'docker push 6d43aa80588b.ngrok.io:8212/ice-cream/flavour:latest'
+	      	
+		sh 'docker push 5b90a407b822.ngrok.io/ice-cream/flavour:latest'
 
 		sh 'if [ "$(docker ps -qa -f name=ice)" ]; then'
    			sh 'if [ "$(docker ps -q -f name=ice)" ]; then'
@@ -59,12 +53,12 @@ pipeline{
                         sh 'docker rm vaccine-store;' 
 		sh 'fi'
 
-	  	sh 'docker run -d -p 8212:8080 --name=ice 6d43aa80588b.ngrok.io:8212/ice-cream/flavour:latest'
+	  	sh 'docker run -d -p 8212:8080 --name=ice 5b90a407b822.ngrok.io/ice-cream/flavour:latest'
 
 
 		sh 'docker ps'
 		
-		}
+		
 	   
 	   }
 	   
