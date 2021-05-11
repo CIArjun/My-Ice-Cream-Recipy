@@ -53,7 +53,7 @@ pipeline{
                         sh 'docker rm vaccine-store;' 
 		sh 'fi'
 
-	  	sh 'docker run -d -p 8212:8080 --name=ice 5b90a407b822.ngrok.io/ice-cream/flavour:latest'
+	  	sh 'docker run -d -p 8987:8080 --name=ice 5b90a407b822.ngrok.io/ice-cream/flavour:latest'
 
 
 		sh 'docker ps'
