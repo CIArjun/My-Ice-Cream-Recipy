@@ -29,11 +29,11 @@ pipeline{
 	   	
 		sh 'docker build -t ice-cream/flavour:latest .'
 		
-		sh 'docker tag ice-cream/flavour:latest 7201d2deda09.ngrok.io/ice-cream/flavour:latest'
+		sh 'docker tag ice-cream/flavour:latest f13bb99de16e.ngrok.io/ice-cream/flavour:latest'
 		
-		sh 'docker login -u admin -p admin 7201d2deda09.ngrok.io'
+		sh 'docker login -u admin -p admin f13bb99de16e.ngrok.io'
 		
-		sh 'docker push 7201d2deda09.ngrok.io/ice-cream/flavour:latest'
+		sh 'docker push f13bb99de16e.ngrok.io/ice-cream/flavour:latest'
 		
 		}
 	   }
@@ -44,7 +44,7 @@ pipeline{
 	
 	   steps{
 	      	
-		sh 'docker push 7201d2deda09.ngrok.io/ice-cream/flavour:latest'
+		sh 'docker push f13bb99de16e.ngrok.io/ice-cream/flavour:latest'
 
 		sh 'if [ "$(docker ps -qa -f name=ice)" ]; then'
    			sh 'if [ "$(docker ps -q -f name=ice)" ]; then'
@@ -53,7 +53,7 @@ pipeline{
                         sh 'docker rm vaccine-store;' 
 		sh 'fi'
 
-	  	sh 'docker run -d -p 8987:8080 --name=ice 7201d2deda09.ngrok.io/ice-cream/flavour:latest'
+	  	sh 'docker run -d -p 8987:8080 --name=ice f13bb99de16e.ngrok.io/ice-cream/flavour:latest'
 
 
 		sh 'docker ps'
