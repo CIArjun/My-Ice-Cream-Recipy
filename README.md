@@ -6,9 +6,3 @@ Lets try agian :)
 Testing hook
 
 
-{
-        docker {
-            image 'maven:3.8-openjdk-11' 
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
