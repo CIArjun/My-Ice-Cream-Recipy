@@ -55,7 +55,9 @@ pipeline{
 	      	
 		sh "docker pull localhost:8212/ice-cream/flavour:latest"
 
-			
+		sh "docker stop ice"
+		
+		sh "docker rm ice"
 
 	  	sh 'docker run -d -p 8987:8080 --name=ice localhost:8212/ice-cream/flavour:latest'
 
