@@ -55,9 +55,9 @@ pipeline{
 	      	
 		sh "docker pull localhost:8212/ice-cream/flavour:latest"
 
-		sh "if [ '$(docker ps -qa -f name=ice)' ]; then"
+		sh "if [ '${(docker ps -qa -f name=ice)}' ]; then"
    		    
-		    sh "if [ '$(docker ps -q -f name=ice)' ]; then"
+		    sh "if [ '${(docker ps -q -f name=ice)}' ]; then"
        			
 			sh "docker stop ice;"
 		    
