@@ -33,9 +33,11 @@ pipeline{
 		
 		sh 'docker tag ice-cream/flavour:latest localhost:8212/ice-cream/flavour:latest'
 		
-		sh 'docker login -u admin -p admin localhost:8212'
+		sh 'docker login -u ${uname} -p ${pwd} localhost:8212'
 		
 		sh 'docker push localhost:8212/ice-cream/flavour:latest'
+		
+		echo " ${uname} "
 		
 		}
 	   	
