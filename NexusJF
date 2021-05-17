@@ -55,18 +55,7 @@ pipeline{
 	      	
 		sh "docker pull localhost:8212/ice-cream/flavour:latest"
 
-		sh  if [ '$(docker ps -qa -f name=ice)' ]; then
-   		    
-		    sh  if [ '$(docker ps -q -f name=ice)' ]; then 
-       			
-			sh "docker stop ice;"
-		    
-		    sh  fi
-                       
-		    sh "docker rm ice;" 
-		
-		sh  fi 
-		
+			
 
 	  	sh 'docker run -d -p 8987:8080 --name=ice localhost:8212/ice-cream/flavour:latest'
 
