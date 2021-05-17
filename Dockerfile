@@ -1,9 +1,15 @@
-FROM debian:stretch 
-WORKDIR /opt/ 
-ADD jdk-8u202-linux-x64.tar.gz /opt/ 
-ADD apache-tomcat-8.5.61.tar.gz /opt/ 
-ENV JAVA_HOME=/opt/jdk1.8.0_202 
-ENV PATH $JAVA_HOME/bin:$PATH 
-ADD ./target/*.war /opt/apache-tomcat-8.5.61/webapps/ 
-EXPOSE 8080 
-CMD ["/opt/apache-tomcat-8.5.61/bin/catalina.sh" , "run"]
+FROM maven:3.6.1-jdk-8 as maven_builder
+
+WORKDIR /app
+
+ADD pom.xml /app
+
+RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "clean", "--fail-never"]
+
+ADD . /app 
+
+RUN ["mvn","clean","install","-T","2C","-DskipTests=true"]
+
+FROM tomcat:8.5.43-jdk8
+
+COPY --from=maven_builder /app/target/*.war /usr/local/tomcat/webapp
