@@ -29,7 +29,9 @@ pipeline{
 	   
 	   	withCredentials([usernamePassword(credentialsId: 'login', passwordVariable: 'pwd', usernameVariable: 'uname')]) {
    		
-    		sh 'docker build -t ice-cream/flavour:latest .'
+    		echo " ${uname} "
+		
+		sh 'docker build -t ice-cream/flavour:latest .'
 		
 		sh 'docker tag ice-cream/flavour:latest localhost:8212/ice-cream/flavour:latest'
 		
@@ -37,7 +39,7 @@ pipeline{
 		
 		sh 'docker push localhost:8212/ice-cream/flavour:latest'
 		
-		echo " ${uname} "
+		
 		
 		}
 	   	
