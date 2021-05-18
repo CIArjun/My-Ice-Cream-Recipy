@@ -61,7 +61,7 @@
 		<sonar.tests>src/test/java/service</sonar.tests>
 		<sonar.projectKey>Ice-Cream</sonar.projectKey>
 
-		<sonar.host.url>http://7f77d3b9c5e7.ngrok.io/sonar</sonar.host.url>
+		<sonar.host.url>http://b5d13820a569.ngrok.io/sonar</sonar.host.url>
 
 		<sonar.login>61e4bed9a3833683c096c02ef3bbd43e68608bc2</sonar.login>
 	</properties>
