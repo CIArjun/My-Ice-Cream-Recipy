@@ -29,7 +29,7 @@ pipeline{
 	   
 	   	withCredentials([usernamePassword(credentialsId: 'nexus-creds', passwordVariable: 'pwd', usernameVariable: 'uname')]) {
    		
-    		echo " ${uname} "
+    		sh "sudo chmod 777 ./target" 
 		
 		sh 'docker build -t ice-cream/flavour:latest .'
 		
