@@ -31,11 +31,11 @@ pipeline{
    	
 		sh 'docker build -t ice-cream/flavour:latest .'
 		
-		sh 'docker tag ice-cream/flavour:latest localhost:8212/ice-cream/flavour:latest'
+		sh 'docker tag ice-cream/flavour:latest http://01c48b154b60.ngrok.io/ice-cream/flavour:latest'
 		
-		sh "docker login -u '${uname}' -p '${pwd}' localhost:8212"
+		sh "docker login -u '${uname}' -p '${pwd}' http://01c48b154b60.ngrok.io"
 		
-		sh 'docker push localhost:8212/ice-cream/flavour:latest'
+		sh 'docker push http://01c48b154b60.ngrok.io/ice-cream/flavour:latest'
 		
 		
 		
@@ -51,13 +51,11 @@ pipeline{
 	
 	   steps{
 	      	
-		sh "docker pull localhost:8212/ice-cream/flavour:latest"
+		sh "docker pull http://01c48b154b60.ngrok.io/ice-cream/flavour:latest"
 
-		sh "docker stop ice"
 		
-		sh "docker rm ice"
 
-	  	sh 'docker run -d -p 8987:8080 --name=ice localhost:8212/ice-cream/flavour:latest'
+	  	sh 'docker run -d -p 8987:8080 --name=ice http://01c48b154b60.ngrok.io/ice-cream/flavour:latest'
 
 
 		sh 'docker ps'
