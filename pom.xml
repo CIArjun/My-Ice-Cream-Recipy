@@ -8,13 +8,13 @@
 		
 		<snapshotRepository>
        			<id>nexus</id>
-			<url>http://d02343e5fe6b.ngrok.io/Flavour-snapshot/</url>
+			<url>http://59138ec44d97.ngrok.io/Flavour-snapshot/</url>
     		</snapshotRepository>
 			
     		<repository>
         		<uniqueVersion>false</uniqueVersion>
        			<id>nexus</id>
-			<url>http://d02343e5fe6b.ngrok.io/repository/Flavour/</url>
+			<url>http://59138ec44d97.ngrok.io/repository/Flavour/</url>
     		</repository>
 	</distributionManagement>
 	<dependencies>
