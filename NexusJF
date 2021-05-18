@@ -47,16 +47,17 @@ pipeline{
 	   
 	   
 	   
-	stage('Run our own Ice-Cream-Flaour'){
+	stage('Run our own Ice-Cream-Flavour'){
 	
 	   steps{
 	      	
 		sh "docker pull 01c48b154b60.ngrok.io/ice-cream/flavour:latest"
-
 		
+		sh 'docker stop ice'
+		
+		sh 'docker rm ice'
 
 	  	sh 'docker run -d -p 8987:8080 --name=ice 01c48b154b60.ngrok.io/ice-cream/flavour:latest'
-
 
 		sh 'docker ps'
 		
