@@ -5,10 +5,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<distributionManagement>
+		
+		<snapshotRepository>
+       			<id>nexus</id>
+			<url>http://localhost:8081/repository/Flavour/</url>
+    		</repository>
+			
     		<repository>
-        	<uniqueVersion>false</uniqueVersion>
-       		<id>nexus</id>
-		<url>http://localhost:8081/repository/Flavour-snapshot/</url>
+        		<uniqueVersion>false</uniqueVersion>
+       			<id>nexus</id>
+			<url>http://localhost:8081/repository/Flavour-snapshot/</url>
     		</repository>
 	</distributionManagement>
 	<dependencies>
