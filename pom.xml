@@ -8,13 +8,13 @@
 		
 		<snapshotRepository>
        			<id>nexus</id>
-			<url>http://localhost:8081/repository/Flavour/</url>
+			<url>http://localhost:8081/repository/Flavour-snapshot/</url>
     		</snapshotRepository>
 			
     		<repository>
         		<uniqueVersion>false</uniqueVersion>
        			<id>nexus</id>
-			<url>http://localhost:8081/repository/Flavour-snapshot/</url>
+			<url>http://localhost:8081/repository/Flavour/</url>
     		</repository>
 	</distributionManagement>
 	<dependencies>
