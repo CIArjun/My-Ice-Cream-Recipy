@@ -1,6 +1,12 @@
 pipeline {
 	
-    agent any
+    agent { 
+	    docker 
+	    { 
+		    image 'maven:3.8-openjdk-11' 
+		    args '-v /root/.m2:/root/.m2'
+	    }
+    	  }
 	
     stages {
         stage('Build') {
@@ -32,7 +38,7 @@ pipeline {
 	    
 	post {
           always {
-		  archiveArtifacts artifacts: 'target/My Ice-Cream Flavour!.war'
+		  archiveArtifacts artifacts: 'target/My-Ice-Cream-Flavour!.war'
              junit  'target/surefire-reports/*.xml'
              }
 	}
