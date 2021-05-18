@@ -67,7 +67,7 @@
 	</properties>
 
 	<build>
-		<finalName>My Ice-Cream Flavour!</finalName>
+		<finalName>My-Ice-Cream-Flavour!</finalName>
 
 		<pluginManagement>
 			<plugins>
