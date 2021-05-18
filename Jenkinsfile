@@ -29,7 +29,7 @@ pipeline {
 	
 	stage("Trigger Nexus Job"){
 	    steps{
-		build wait: true, job: '/Ice-Nexus'    	
+		build wait: true, job: '/Ice-Cream-Nexus'    	
 	    }
 			
 	 }  
