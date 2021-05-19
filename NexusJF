@@ -31,11 +31,11 @@ pipeline{
    	
 		sh 'docker build -t ice-cream/flavour:latest .'
 		
-		sh 'docker tag ice-cream/flavour:latest f74c6e7a31a9.ngrok.io/ice-cream/flavour:latest'
+		sh 'docker tag ice-cream/flavour:latest f537f3f8290d.ngrok.io/ice-cream/flavour:latest'
 		
-		sh "docker login -u '${uname}' -p '${pwd}' f74c6e7a31a9.ngrok.io"
+		sh "docker login -u '${uname}' -p '${pwd}' f537f3f8290d.ngrok.io"
 		
-		sh 'docker push f74c6e7a31a9.ngrok.io/ice-cream/flavour:latest'
+		sh 'docker push f537f3f8290d.ngrok.io/ice-cream/flavour:latest'
 		
 		
 		
@@ -51,7 +51,7 @@ pipeline{
 	
 	   steps{
 	      	
-		sh "docker pull f74c6e7a31a9.ngrok.io/ice-cream/flavour:latest"
+		sh "docker pull f537f3f8290d.ngrok.io/ice-cream/flavour:latest"
 		
 		sh(returnStdout: true, script: '''#!/bin/bash
           		 if [ "$(docker ps -qa -f name=ice)" ]; then
@@ -62,7 +62,7 @@ pipeline{
 			 fi
        			 '''.stripIndent())
 
-	  	sh 'docker run -d -p 8987:8080 --name=ice f74c6e7a31a9.ngrok.io/ice-cream/flavour:latest'
+	  	sh 'docker run -d -p 8987:8080 --name=ice f537f3f8290d.ngrok.io/ice-cream/flavour:latest'
 
 		sh 'docker ps'
 		
