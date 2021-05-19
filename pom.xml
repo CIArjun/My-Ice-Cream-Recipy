@@ -7,12 +7,13 @@
 	<distributionManagement>
 		
 		<snapshotRepository>
+			<uniqueVersion>false</uniqueVersion>
        			<id>nexus</id>
 			<url>http://d48456af0523.ngrok.io/Flavour-snapshot/</url>
     		</snapshotRepository>
 			
     		<repository>
-        		<uniqueVersion>false</uniqueVersion>
+        		
        			<id>nexus</id>
 			<url>http://d48456af0523.ngrok.io/repository/Flavour/</url>
     		</repository>
