@@ -53,9 +53,14 @@ pipeline{
 	      	
 		sh "docker pull f74c6e7a31a9.ngrok.io/ice-cream/flavour:latest"
 		
-		sh 'docker stop ice'
-		
-		sh 'docker rm ice'
+		sh(returnStdout: true, script: '''#!/bin/bash
+          		 if [ "$(docker ps -qa -f name=ice)" ]; then
+    			     if [ "$(docker ps -q -f name=ice)" ]; then
+        			 docker stop ice;
+    			     fi
+    			     docker rm ice; 
+			 fi
+       			 '''.stripIndent())
 
 	  	sh 'docker run -d -p 8987:8080 --name=ice f74c6e7a31a9.ngrok.io/ice-cream/flavour:latest'
 
