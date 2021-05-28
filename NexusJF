@@ -2,11 +2,6 @@ pipeline{
 
     agent any
     
-    tools{
-    
-	maven 'MAVEN_HOME'
-	
-	}
     stages{
     
 	stage('Upload war to Nexus'){
