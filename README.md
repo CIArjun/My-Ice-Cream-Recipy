@@ -46,3 +46,11 @@ Testing hook
       <skipStaging>true</skipStaging>
    </configuration>
 </plugin>	
+
+
+
+    tools{
+    
+	maven 'MAVEN_HOME'
+	
+	}
